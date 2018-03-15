@@ -1,7 +1,12 @@
 package model;
 
+@Entity
+@Table(name="Item")
+
 public class Item {
 	
+	@Id @generatedvalue
+	private int id;
 	private String filename;
 
 	public Item(String filename) {

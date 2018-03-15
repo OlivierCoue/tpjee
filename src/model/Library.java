@@ -3,9 +3,21 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Library")
+
 public class Library {
 
+	@Id @generatedvalue
+	private int id;
 	private String name;
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy="library")
 	private final List<Item> items;
 	
 	public Library(String name) {
