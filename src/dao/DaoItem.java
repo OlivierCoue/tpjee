@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 import model.Item;
 
 public class DaoItem {
-	public static int register(Item obj) {
+	public static int save(Item obj) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
 		t.begin();
