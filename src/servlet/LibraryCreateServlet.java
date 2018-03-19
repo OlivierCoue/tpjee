@@ -35,8 +35,8 @@ public class LibraryCreateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Library library = new Library(0, request.getParameter("libName"));
-		DaoLibrary.create(library);
+		Library library = new Library(request.getParameter("libName"));
+		DaoLibrary.save(library);
 		response.sendRedirect("/tp5");
 	}
 

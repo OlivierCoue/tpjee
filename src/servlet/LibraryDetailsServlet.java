@@ -28,7 +28,7 @@ public class LibraryDetailsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int libraryId = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("library", DaoLibrary.getById(libraryId));
+		request.setAttribute("library", DaoLibrary.get(libraryId));
 		getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/libraryDetails.jsp").forward(request,response);
 	}
 
