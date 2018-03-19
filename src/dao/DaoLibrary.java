@@ -26,8 +26,7 @@ public class DaoLibrary {
 	}
 	
 	public static int register(Library obj) {
-		Session session = new Configuration().
-				configure().buildSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
 		t.begin();
 		
@@ -37,5 +36,7 @@ public class DaoLibrary {
 		
 		return i;
 	}
+	
+	
 
 }

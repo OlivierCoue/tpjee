@@ -27,6 +27,9 @@ public class Library {
 		this.name = name;
 		this.items = new ArrayList<Item>();
 	}
+	public int getId() {
+		return id;
+	}
 
 	public String getName() {
 		return name;

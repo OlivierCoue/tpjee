@@ -13,6 +13,11 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">create </property>
-        <mapping resource="model/library.hbm.xml" />
+        <mapping class="model.Film" />
+        <mapping class="model.Item" />
+        <mapping class="model.Library" />
+        <mapping class="model.MusicalVideo" />
+        <mapping class="model.MusicFile" />
+        <mapping class="model.Video" />
     </session-factory>
 </hibernate-configuration>

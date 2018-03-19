@@ -9,29 +9,17 @@ import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name="Item")
+@Table(name="Video")
 
-public class Item {
-	
+public class Video extends Item {
+
 	@Id @GeneratedValue
 	private int id;
-	private String filename;
-
-	public Item(String filename) {
-		super();
-		this.filename = filename;
+	public Video(String filename) {
+		super(filename);
 	}
 	
 	public int getId() {
 		return id;
 	}
-
-	public String getFilename() {
-		return filename;
-	}
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	
 }
