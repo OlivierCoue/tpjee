@@ -1,11 +1,16 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
 @Table(name="Item")
 
 public class Item {
 	
-	@Id @generatedvalue
+	@Id @GeneratedValue
 	private int id;
 	private String filename;
 
