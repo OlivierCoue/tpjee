@@ -6,37 +6,37 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.DaoLibrary;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Index
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("")
-public class HomeServlet extends HttpServlet {
+@WebServlet("/logout")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeServlet() {
+    public LogoutServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("libraries", DaoLibrary.getAll());
-		getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(request,response);
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+		    session.invalidate();
+		}
+		response.sendRedirect("/tp5");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
