@@ -6,13 +6,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MusicFile")
-
 public class MusicFile extends Item {
 	
 	private String name, artist, album;
-	public MusicFile(int id, String filename, String name, String artist, String album) {
-		super(id, filename);
+	
+	public MusicFile() {}
+	
+	public MusicFile(String filename, Library library, String name, String artist, String album) {
+		super(filename, library);
 		this.name = name;
 		this.artist = artist;
 		this.album = album;

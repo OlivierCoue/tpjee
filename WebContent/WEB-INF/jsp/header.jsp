@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand" href="#">
-    <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
+<nav class="navbar navbar-light bg-light justify-content-between" style="margin-bottom: 30px">
+  <a class="navbar-brand" href="/tp5">
+    <img src="/tp5/img/icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Gestionnaire de bibliothèques
   </a>
   
   <c:if test="${empty sessionScope.user}">

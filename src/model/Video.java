@@ -8,13 +8,16 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name="Video")
-
 public class Video extends Item {
 
 	public Video(int id, String filename) {
 		super(id, filename);
 	}
+	
+	public Video(String filename, Library library) {
+		super(filename, library);
+	}
+	
+	public Video() {};
 	
 }

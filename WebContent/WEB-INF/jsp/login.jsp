@@ -15,11 +15,15 @@
 		<div class="container">
 			
 			<jsp:include page="header.jsp" />
+			<div class="row">
 			
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-6 offset-md-3">
 				<c:if test="${loginFailed == true}">
 					<div class="alert alert-danger" role="alert">Nom d'utilisateur ou mot de passe incorrecte</div>
 				</c:if>
+				
+				<h2 style="text-align: center; margin-top: 30px">Se connecter</h2>
+				
 				<form action="/tp5/login" method="POST" >
 
   					<div class="form-group input-group">
@@ -38,6 +42,7 @@
   
 				</form>        
 			</div>  
+			</div>
   				
 		</div>
 	</body>

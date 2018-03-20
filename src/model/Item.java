@@ -10,8 +10,6 @@ import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name="Item")
-
 public class Item {
 	
 	@Id @GeneratedValue
@@ -22,6 +20,12 @@ public class Item {
 	private Library library;
 	
 	public Item() {}
+	
+	public Item(String filename, Library library) {
+		super();
+		this.filename = filename;
+		this.library = library;
+	}
 	
 	public Item(int id, String filename) {
 		super();

@@ -18,7 +18,7 @@
 			
 			<div class="panel panel-default">
   
-  				<div class="panel-heading">Liste des bibliothèques</div>
+  				<h2 class="panel-heading">Liste des bibliothèques</h2>
 			
 				<table class="table">
 					<tr>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DaoItem;
 import dao.DaoLibrary;
 
 /**
@@ -28,7 +29,13 @@ public class LibraryDetailsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int libraryId = Integer.parseInt(request.getParameter("id"));
+		String searchParam = request.getParameter("q");
+		String type = request.getParameter("type") != null ? request.getParameter("type") : "Item";
 		request.setAttribute("library", DaoLibrary.get(libraryId));
+		request.setAttribute("items", DaoItem.searchInLibrary(libraryId, searchParam, type));
+		request.setAttribute("searchType", type);
+		request.setAttribute("searchRq", searchParam);
+		
 		getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/libraryDetails.jsp").forward(request,response);
 	}
 

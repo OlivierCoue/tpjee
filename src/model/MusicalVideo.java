@@ -2,21 +2,23 @@ package model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="MusicalVideo")
-
 public class MusicalVideo extends Video {
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private MusicFile musicFile;
 	
-	public MusicalVideo(int id, String filename, MusicFile musicFile) {
-		super(id, filename);
+	public MusicalVideo() {
+	}
+	
+	public MusicalVideo(String filename, Library library, MusicFile musicFile) {
+		super(filename, library);
 		this.musicFile = musicFile;
 	}
 
