@@ -18,21 +18,19 @@ import model.User;
  * Servlet Filter implementation class AnonymousFilter
  */
 @WebFilter(filterName = "AnonymousFilter",
-urlPatterns = {"/login"})
+urlPatterns = {"/login", "/signup"})
 public class AnonymousFilter implements Filter {
 
     /**
      * Default constructor. 
      */
     public AnonymousFilter() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -52,7 +50,6 @@ public class AnonymousFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 	}
 
 }

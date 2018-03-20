@@ -19,5 +19,6 @@
         <mapping class="model.MusicalVideo" />
         <mapping class="model.MusicFile" />
         <mapping class="model.Video" />
+        <mapping class="model.User" />
     </session-factory>
 </hibernate-configuration>

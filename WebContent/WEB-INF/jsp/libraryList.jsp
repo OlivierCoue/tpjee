@@ -37,7 +37,7 @@
 			</div>
 			
 			<c:if test="${(!empty sessionScope.user) && (sessionScope.user.isAdmin)}">
-				<a class="btn btn-primary" href="/tp5/library/create">Ajouter une bibliothèque</a>
+				<a class="btn btn-primary" href="${pageContext.request.contextPath}/library/create">Ajouter une bibliothèque</a>
 			</c:if>
 		
 		</div>

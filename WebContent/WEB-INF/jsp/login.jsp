@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>${library.name}</title>
+		<title>Se connecter</title>
 		
 		<jsp:include page="imports.jsp" />
 		
@@ -22,13 +22,13 @@
 					<div class="alert alert-danger" role="alert">Nom d'utilisateur ou mot de passe incorrecte</div>
 				</c:if>
 				
-				<h2 style="text-align: center; margin-top: 30px">Se connecter</h2>
+				<h2 style="text-align: center; margin-top: 30px"a>Se connecter</h2>
 				
-				<form action="/tp5/login" method="POST" >
+				<form action="${pageContext.request.contextPath}/login" method="POST" >
 
   					<div class="form-group input-group">
     					<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    					<input class="form-control" type="text" name='username' placeholder="email"/>          
+    					<input class="form-control" type="text" name='email' placeholder="Email"/>          
   					</div>
   
   					<div class="form-group input-group">

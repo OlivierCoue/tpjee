@@ -74,7 +74,7 @@ public class ItemServlet extends HttpServlet {
 			break;
 		}
 		
-		response.sendRedirect("/tp5/library?id="+libraryId);
+		response.sendRedirect(request.getContextPath()+"/library?id="+libraryId);
 	}
 
 }

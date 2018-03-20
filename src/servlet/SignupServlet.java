@@ -12,16 +12,16 @@ import dao.DaoUser;
 import model.User;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class SignupServlet
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/signup")
+public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public SignupServlet() {
         super();
     }
 
@@ -29,25 +29,32 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request,response);
+		getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email  = request.getParameter("email");
+		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String repeatPassword = request.getParameter("repeatPassword");
 		
-		User user = DaoUser.get(email);
-		
-		if(user != null && User.hashPassword(password).equals(user.getPassword())) {
+		if(username!=null && email!=null && password!=null 
+			&& !username.trim().isEmpty() && !email.trim().isEmpty() && !password.trim().isEmpty() && !repeatPassword.trim().isEmpty()
+			&& repeatPassword!=null && password.equals(repeatPassword)) {
+			
+			password = User.hashPassword(password);
+			boolean isAdmin = email.equals("admin@admin.com") ? true : false;
+			User user = new User(username, email, password, isAdmin);
+			DaoUser.save(user);
 			HttpSession sess = request.getSession();
 			sess.setAttribute("user", user);
 			response.sendRedirect(request.getContextPath());
 		}else {
-			request.setAttribute("loginFailed", true);
-			getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request,response);
+			request.setAttribute("signupFailed", true);
+			getServletConfig().getServletContext().getRequestDispatcher("/WEB-INF/jsp/signup.jsp").forward(request,response);
 		}
 	}
 

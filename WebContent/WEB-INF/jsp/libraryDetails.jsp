@@ -117,7 +117,7 @@
 					          				<span aria-hidden="true">&times;</span>
 					        			</button>
 					      			</div>
-					      			<form action="/tp5/item" method="POST">
+					      			<form action="${pageContext.request.contextPath}/item" method="POST">
 						      			<div class="modal-body">
 						      				<div class="form-group">
 				    							<label for="filmFileNameInput">Nom du fichier</label>
@@ -156,7 +156,7 @@
 					          				<span aria-hidden="true">&times;</span>
 					        			</button>
 					      			</div>
-					      			<form action="/tp5/item" method="POST">
+					      			<form action="${pageContext.request.contextPath}/item" method="POST">
 						      			<div class="modal-body">
 						      				<div class="form-group">
 				    							<label for="musicFileFileNameInput">Nom du fichier</label>
@@ -199,7 +199,7 @@
 					          				<span aria-hidden="true">&times;</span>
 					        			</button>
 					      			</div>
-					      			<form action="/tp5/item" method="POST">
+					      			<form action="${pageContext.request.contextPath}/item" method="POST">
 						      			<div class="modal-body">
 						      				<div class="form-group">
 				    							<label for="musicVideoFileNameInput">Nom du fichier</label>

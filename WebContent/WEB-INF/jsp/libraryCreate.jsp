@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>${library.name}</title>
+		<title>Ajouter une bibliothèque</title>
 		
 		<jsp:include page="imports.jsp" />
 		
@@ -19,12 +19,11 @@
 			<div>
 				<h2>Créer une bibliothèque</h2>
 				
-				<form action="/tp5/library/create" method="POST">
+				<form action="${pageContext.request.contextPath}/library/create" method="POST">
 					<input type="text" name="libName" placeholer="Nom">
 					<input type="submit" placeholer="Créer">
 				</form>
 				
-				<a href="/tp5">Accueil</a>
 			</div>
 			
 		</div>

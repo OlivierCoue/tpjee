@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DaoLibrary;
+import model.User;
 
 /**
  * Servlet implementation class Index
